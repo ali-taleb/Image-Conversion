@@ -29,7 +29,7 @@ Public Class Form1
     Private Sub exec()
         Dim s = File.ReadAllLines(My.Computer.FileSystem.SpecialDirectories.Desktop & "\ImageInfo.csv")
         Dim ff = My.Computer.FileSystem.GetFiles(dir, FileIO.SearchOption.SearchAllSubDirectories, "*")
-
+        'aa
         SetLicense()
 
         Label1.Invoke(Sub()
