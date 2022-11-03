@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>Leadtools.Dicom.Annotations</name>
+  </assembly>
+  <members>
+    <member name="T:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities">
+      <summary>Converts between the Leadtools.Dicom.DicomAnnotationObject and the Leadtools.Annotations.Engine.AnnObject annotation formats.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.#ctor">
+      <summary>Initializes a new instance of a DicomAnnotationsUtilities object.</summary>
+    </member>
+    <member name="M:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.FromAnnContainerToDataSet(Leadtools.Dicom.DicomDataSet,Leadtools.Annotations.Core.AnnContainer)">
+      <summary>Converts all the LEAD Annotation objects in an AnnContainer into one or more DICOM annotation objects, and stores the result in a Leadtools.Dicom.DicomDataSet.</summary>
+      <param name="ds">The Leadtools.Dicom.DicomDataSet where the resulting DICOM Annotation objects are stored.</param>
+      <param name="annContainer">The Leadtools.Annotations.Engine.AnnContainer that contains a list of Leadtools.Annotations.Engine.AnnObject objects that are to be converted.</param>
+      <returns>A Leadtools.Dicom.DicomElement that represents GraphicAnnotationSequence item that contains the DICOM Annotations.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.FromAnnContainerToDataSet(Leadtools.Dicom.DicomDataSet,Leadtools.Dicom.DicomElement,Leadtools.Annotations.Core.AnnContainer)">
+      <summary>Converts all the LEAD Annotation objects in an AnnContainer into one or more DICOM annotation objects, and stores the result in a Leadtools.Dicom.DicomDataSet.</summary>
+      <param name="ds">The Leadtools.Dicom.DicomDataSet where the resulting DICOM Annotation objects are stored.</param>
+      <param name="graphicAnnotationSequenceItem">The specific Leadtools.Dicom.DicomElement where the resulting DICOM Annotation objects are stored.</param>
+      <param name="annContainer">The Leadtools.Annotations.Engine.AnnContainer that contains a list of Leadtools.Annotations.Engine.AnnObject objects that are to be converted.</param>
+      <returns>A Leadtools.Dicom.DicomElement that represents GraphicAnnotationSequence item that contains the DICOM Annotations.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.FromAnnObjectToDataSet(Leadtools.Dicom.DicomDataSet,Leadtools.Annotations.Core.AnnObject,Leadtools.Dicom.DicomElement)">
+      <summary>Converts a LEAD Annotation object into one or more DICOM annotation objects, and adds the new DICOM annotation objects into the dataset.</summary>
+      <param name="ds">The Leadtools.Dicom.DicomDataSet where the annotation objects will be added.</param>
+      <param name="annObject">The LEAD annotation object that is being converted.</param>
+      <param name="graphicAnnSqItem">Pointer to an item element under the "Graphic Annotation Sequence" (0070,0001) in the "Graphic Annotation Module". The resulting DICOM annotation objects will be added to the dataset under the item this parameter points to.</param>
+    </member>
+    <member name="M:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.FromDataSetToAnnContainer(Leadtools.Dicom.DicomDataSet,Leadtools.Dicom.DicomElement)">
+      <summary>Converts all of the Graphic Annotation Sequence (DICOM Annotations) stored in a Leadtools.Dicom.DicomDataSet into a LEAD AnnContainer that contains LEAD Leadtools.Annotations.Engine.AnnObject objects.</summary>
+      <param name="ds">The Leadtools.Dicom.DicomDataSet that contains the Graphic Annotation Sequence (DICOM Annotations) being converted.</param>
+      <param name="graphicAnnSqItem">Pointer to an item element under the "Graphic Annotation Sequence" (0070,0001) in the "Graphic Annotation Module".</param>
+      <returns>A LEAD Leadtools.Annotations.Engine.AnnContainer that contains LEAD Leadtools.Annotations.Engine.AnnObject</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.IncrementCompoundGraphicInstanceId">
+      <summary>Increments the CompoundGraphicInstanceId to a new,unused value that can be assigned to the next DICOM Compound Graphic.</summary>
+      <returns>The new value for CompoundGraphicInstanceId.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.IncrementGraphicGroupId">
+      <summary>Increments the GraphicGroupId to a new,unused value that can be assigned to the next group.</summary>
+      <returns>The new value for GraphicGroupId.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.ToAnnObject(Leadtools.Dicom.DicomAnnotationObject)">
+      <summary>Converts a Leadtools.Dicom.DicomAnnotationObject to an AnnObject.</summary>
+      <param name="dicomAnnotationObject">The DICOM annotation object that is being converted</param>
+      <returns>An AnnObject representation of the DICOM annotation if successful; null if the Leadtools.Dicom.DicomAnnotationObject cannot be converted.</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.ToAnnObject(Leadtools.Dicom.DicomDataSet,List&lt;IDicomAnnotationObject&gt;)">
+      <summary>Converts a list of Leadtools.IDicomAnnotationObject into a list of Leadtools.Annotations.Engine.AnnObject objects.</summary>
+      <param name="ds">A Leadtools.Dicom.DicomDataSet that contains the Graphic Group Sequence (0070,0234).</param>
+      <param name="dicomAnnotationObjectList">The a list of **Leadtools.IDicomAnnotationObject** to be converted.</param>
+      <returns>A list of Leadtools.Annotations.Engine.AnnObject</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.ToAnnObject(Leadtools.Dicom.DicomDataSet,Leadtools.Dicom.DicomAnnotationObject)">
+      <summary>Converts a list of Leadtools.Dicom.DicomAnnotationObject into a list of Leadtools.Annotations.Engine.AnnObject objects.</summary>
+      <param name="ds">A Leadtools.Dicom.DicomDataSet that contains the Graphic Group Sequence (0070,0234).</param>
+      <param name="dicomAnnotationObjectList">The a list of list of Leadtools.Dicom.DicomAnnotationObject to be converted.</param>
+      <returns>A list of Leadtools.Annotations.Engine.AnnObject</returns>
+    </member>
+    <member name="M:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.ToAnnObject(IDicomAnnotationObject)">
+      <summary>Converts an object implementing the Leadtools.IDicomAnnotationObject interface to an AnnObject.</summary>
+      <param name="dicomAnnotationObject">The DICOM annotation object that is being converted</param>
+      <returns>An AnnObject representation of the DICOM annotation if successful; null if the Leadtools.Dicom.DicomAnnotationObject cannot be converted.</returns>
+    </member>
+    <member name="E:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.OnIncrementCompoundGraphicInstanceId">
+      <summary>Occurs when the IncrementCompoundGraphicInstanceId is called.</summary>
+    </member>
+    <member name="E:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.OnIncrementGraphicGroupId">
+      <summary>Occurs when the IncrementGraphicGroupId is called.</summary>
+    </member>
+    <member name="P:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.CompoundGraphicInstanceId">
+      <summary>Gets or sets the "Compound Graphic Instance ID" (0070,0226) that is used when converting an Leadtools.Annotations.Engine.AnnObject to a Leadtools.Dicom.DicomCompoundGraphic.</summary>
+      <value>The "Compound Graphic Instance ID" (0070,0226) that is used when converting an Leadtools.Annotations.Engine.AnnObject to a Leadtools.Dicom.DicomCompoundGraphic.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.ContainerMapper">
+      <summary>Gets or sets the Leadtools.Annotations.Engine.AnnContainerMapper that is used when converting between LEAD Leadtools.Annotations.Engine.AnnObject and Leadtools.Dicom.DicomAnnotationObject.</summary>
+      <value>The Leadtools.Annotations.Engine.AnnContainerMapper that is used when converting between LEAD Leadtools.Annotations.Engine.AnnObject and Leadtools.Dicom.DicomAnnotationObject.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.DefaultObject">
+      <summary>Gets or sets the defaults used when calling ToAnnObject(DicomAnnotationObject).</summary>
+      <value>Contains defaults that are usedwhen calling ToAnnObject(DicomAnnotationObject).</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.DisplayHeight">
+      <summary>Sets the display height of the annotations in pixels</summary>
+      <value>The display height of the annotations in pixels.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.DisplayWidth">
+      <summary>Sets the display width of the annotations in pixels</summary>
+      <value>The display width of the annotations in pixels.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.GraphicGroupId">
+      <summary>Gets or sets the "Graphic Group ID" (0070,0295) that is used when converting an AnnObject to a grouped Leadtools.Dicom.DicomAnnotationObject.</summary>
+      <value>The "Graphic Group ID" (0070,0295) that is used when converting an AnnObject to a grouped Leadtools.Dicom.DicomAnnotationObject.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.ImageDpiX">
+      <summary>Gets or sets the horizontal resolution used when converting the points of an Leadtools.Annotations.Engine.AnnObject to pixels.</summary>
+      <value>The horizontal resolution used when converting the points of an Leadtools.Annotations.Engine.AnnObject to pixels.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.ImageDpiY">
+      <summary>Gets or sets the vertical resolution used when converting the points of an Leadtools.Annotations.Engine.AnnObject to pixels.</summary>
+      <value>The vertical resolution used when converting the points of an Leadtools.Annotations.Engine.AnnObject to pixels.</value>
+    </member>
+    <member name="P:Leadtools.Dicom.Annotations.DicomAnnotationsUtilities.LayerName">
+      <summary>Gets or sets the layer name used when calling FromAnnObjectToDataSet.</summary>
+      <value>The layer name used when calling FromAnnObjectToDataSet.</value>
+    </member>
+  </members>
+</doc>
