@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2002
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "exportClearDentDocs", "exportClearDentDocs\exportClearDentDocs.vbproj", "{FC1AD5E0-AB60-4C64-AD90-DE98D2A43CCB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC1AD5E0-AB60-4C64-AD90-DE98D2A43CCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC1AD5E0-AB60-4C64-AD90-DE98D2A43CCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC1AD5E0-AB60-4C64-AD90-DE98D2A43CCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC1AD5E0-AB60-4C64-AD90-DE98D2A43CCB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {633BD738-816A-4393-AB73-D49587D30C77}
+	EndGlobalSection
+EndGlobal
